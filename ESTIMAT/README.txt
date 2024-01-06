@@ -1,0 +1,1 @@
+This folder is used to save the output data and images. Please do not delete it.
