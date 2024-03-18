@@ -1,8 +1,8 @@
 
 library(clusterProfiler)
-library(enrichplot)
+
 library(GOplot)
-library(DOSE)
+
 library(stringr)
 gene<-bitr(rownames(diff1),fromType = 'SYMBOL',toType = 'ENTREZID',OrgDb = 'org.Hs.eg.db') 
 KEGG<-enrichKEGG(
