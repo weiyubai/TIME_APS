@@ -95,7 +95,7 @@ ggsave("output/ScType.pdf",width = 4,height = 2.5)
 # Calculate immune score and tumor purity
 ```{r}
 #Here, we describe the steps for calculating immune score, stromal score, tumor purity score, and estimate score based on the ESTIMATE R package.
-#4.	Compute the immune score, tumor purity score, stromal score, and ESTIMATE score. 
+#Compute the immune score, tumor purity score, stromal score, and ESTIMATE score. 
 proj <- Sc_data
 source("./code/AddModuleScore.r")
 ```
@@ -116,14 +116,14 @@ source(Kegg.r)
 # Evaluation of signaling pathway enrichment level
 ```{r}
 #Here, we describe the steps of quantitatively analyzing signal pathways using the 'AddModuleScore' function.
-#7.	Computational analysis of pathway expression across different cell types.
+#Computational analysis of pathway expression across different cell types.
 #a.	Specify the identifier for the signal pathway that needs to be computed. Using ‘Cholesterol metabolism’ as an example, input the identifier for Cholesterol metabolism.
 ID = "hsa04979"
 #Note: KEGG ID can be queried from the following two websites: https://www.kegg.jp/ Or http://lmmd.ecust.edu.cn/netinfer/get_results.php?id=6248
 #b.	Running the calculation program will generate a file in Seurat object format named Inscore, and the calculated scores will be named after the first word of the signal pathway, contained within the Inscore file.
 source("./code/Chose_pathway.r")
 
-#8.	Display multiple signal pathways in the form of heatmaps, and repeat steps 6a-6d. Here, we will use signal pathways such as hsa05200, hsa04510, hsa05208, hsa04932, hsa04151, hsa05205, hsa04610, hsa00190, hsa04512, hsa04979, hsa04066, and hsa04668 as examples to draw a heat map.
+#Display multiple signal pathways in the form of heatmaps, and repeat steps 6a-6d. Here, we will use signal pathways such as hsa05200, hsa04510, hsa05208, hsa04932, hsa04151, hsa05205, hsa04610, hsa00190, hsa04512, hsa04979, hsa04066, and hsa04668 as examples to draw a heat map.
 source("./code/All_pathways.r")
 #Note: In this step, the analysis process from a to k remains exactly the same, except for the different IDs of the signaling pathways. If you need to analyze a specific signaling pathway, simply modify the ID of the pathway. For example, if you need to analyze the ‘Adherens junction signaling pathway (ID hsa04520):
 #gsInfo = keggGet(‘hsa04520’)[[1]]; 
@@ -134,16 +134,16 @@ source("./code/All_pathways.r")
 #Inscore <- AddModuleScore(Sc_data, features = hsa04520, ctrl = 10, name = "hsa0452")
 #Sc_data@meta.data$hsa04520  <- as.numeric(Inscore$hsa045201)# It should be noted that the algorithm for this line of code will default to adding a sequence number 1 after the ID number. 
 ```
-# Differential analysis of abnormal signaling pathways.
+#Differential analysis of abnormal signaling pathways.
 ```{r}
 #Here, we describe the steps of screening differentially expressed genes based on abnormal signaling pathway grouping.
-#9.	Calculate differential genes in single-cell sequencing data by grouping a certain signaling pathway. For example, using the ‘hsa04979’ signaling pathway, all cells are divided into two groups: high and low.
+#Calculate differential genes in single-cell sequencing data by grouping a certain signaling pathway. For example, using the ‘hsa04979’ signaling pathway, all cells are divided into two groups: high and low.
 source("./code/Aps.r")
 ```
 # Hub gene screening
 ```{r}
 #Here, we describe the steps for screening hub genes based on differential analysis of immune and abnormal signaling pathways.
-#10.	Identify and overlap the differential genes associated with the tumor immune microenvironment and the abnormal signaling pathways for screening (Table S4), and visually represent this information using a Venn diagram.
+#Identify and overlap the differential genes associated with the tumor immune microenvironment and the abnormal signaling pathways for screening (Table S4), and visually represent this information using a Venn diagram.
 source("./code/hub_genes.r")
 ```
 
