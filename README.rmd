@@ -8,11 +8,11 @@ date: "2024-5-10"
 setwd("D:/TIME_ASP ")
 ```
 # Prepare Seurat object format single-cell sequencing data of interest. 
+# Option 1: User’s own or public database single-cell sequencing data.
 ```{r}
-#Option 1: User’s own or public database single-cell sequencing data.
 #a.	Put the three files ‘barcodes.tsv’, ‘genes.tsv’, and ‘matrix.mtx’ into the 'folder' folder
 #b.	Build Seurat object.
-Sc_data = CreateSeuratObject(counts = Read10X(folder)
+Sc_data <- CreateSeuratObject(counts = Read10X(folder))
 #c.	Calculate the proportion of mitochondrial genes.
 # The variable in this step is defined as "Sc_data" in order to connect with the analysis steps of subsequent sample data.
 Sc_data[["percent.mt"]] <- PercentageFeatureSet(Sc_data, pattern = "^MT-")
@@ -41,9 +41,11 @@ Sc_data <- RunPCA(Sc_data, features = VariableFeatures(object = Sc_data))
 Sc_data<- RunTSNE(Sc_data, dims = 1:10)
 DimPlot(Sc_data, group.by ="labels",reduction = "tsne",label = TRUE)
 ggsave("ScType.pdf",width = 4,height = 2.5)
-save(Sc_data,file="./Sc_data.Rdata)
+save(Sc_data,file="./Sc_data.Rdata")
 #Save single-cell sequencing expression matrix.
-#Option 2: Using sample data.
+```
+# Option 2: Using sample data.
+```{r}
 rm(list=ls())
 #Clear variables
 set.seed(123456)
@@ -65,7 +67,8 @@ x <- FindVariableFeatures(x, selection.method = "vst", nfeatures = 2000)})
 #Build a list based on two datasets
 sceall = merge(sceList[[1]], y = sceList[[2]], 
 add.cell.ids = samples, merge.data = TRUE) 
-# Merge data> sample1 <- read.table(gzfile("./set/set1/samples.txt.gz"),sep = "\t",header = T)
+# Merge data 
+sample1 <- read.table(gzfile("./set/set1/samples.txt.gz"),sep = "\t",header = T)
 #Import sample information from dataset1
 rownames(sample1) <-sample1$Cell.Barcode
 sample2 <- read.table(gzfile("./set/set2/samples.txt.gz"),sep = "\t",header = T)
