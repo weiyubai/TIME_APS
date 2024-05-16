@@ -10,9 +10,12 @@ setwd("D:/TIME_ASP ")
 # Prepare Seurat object format single-cell sequencing data of interest. 
 # Option 1: User’s own or public database single-cell sequencing data.
 ```{r}
+library(Seurat)
 #a.	Put the three files ‘barcodes.tsv’, ‘genes.tsv’, and ‘matrix.mtx’ into the 'folder' folder
 #b.	Build Seurat object.
-Sc_data <- CreateSeuratObject(counts = Read10X(folder))
+
+folder <- Read10X(data.dir = './folder')
+Sc_data <- CreateSeuratObject(counts = folder)
 #c.	Calculate the proportion of mitochondrial genes.
 # The variable in this step is defined as "Sc_data" in order to connect with the analysis steps of subsequent sample data.
 Sc_data[["percent.mt"]] <- PercentageFeatureSet(Sc_data, pattern = "^MT-")
@@ -35,7 +38,7 @@ library(celldex)
 hpca.se <- HumanPrimaryCellAtlasData()
 lihcSingleR <- GetAssayData(Sc_data, slot = "data")
 lihc.hesc <- SingleR(test=lihcSingleR, ref = hpca.se, labels =hpca.se$label.main)
-table(lihc.hesc$labels, Sc_data $seurat_clusters)
+table(lihc.hesc$labels)
 Sc_data @meta.data$labels <- lihc.hesc$labels
 Sc_data <- RunPCA(Sc_data, features = VariableFeatures(object = Sc_data))
 Sc_data<- RunTSNE(Sc_data, dims = 1:10)
