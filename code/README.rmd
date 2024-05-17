@@ -11,6 +11,7 @@ setwd("D:/TIME_ASP ")
 # Option 1: User’s own or public database single-cell sequencing data.
 ```{r}
 library(Seurat)
+library(ggplot2)
 #a.	Put the three files ‘barcodes.tsv’, ‘genes.tsv’, and ‘matrix.mtx’ into the 'folder' folder
 #b.	Build Seurat object.
 
