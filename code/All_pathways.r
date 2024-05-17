@@ -10,11 +10,11 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa04979  <- list(geneSet$`Cholesterol metabolism - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa04979,
                           ctrl = 10,
                           name = "hsa04979")
-SC_data@meta.data$hsa04979  <- as.numeric(Inscore$hsa049791)
+Sc_data@meta.data$hsa04979  <- as.numeric(Inscore$hsa049791)
 
 
 
@@ -27,11 +27,11 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa05205  <- list(geneSet$`Proteoglycans in cancer - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa05205,
                           ctrl = 10,
                           name = "hsa05205")
-SC_data@meta.data$hsa05205  <- as.numeric(Inscore$hsa052051)
+Sc_data@meta.data$hsa05205  <- as.numeric(Inscore$hsa052051)
 
 
 
@@ -45,11 +45,11 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa00190  <- list(geneSet$`Oxidative phosphorylation - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa00190,
                           ctrl = 10,
                           name = "hsa00190")
-SC_data@meta.data$hsa00190  <- as.numeric(Inscore$hsa001901)
+Sc_data@meta.data$hsa00190  <- as.numeric(Inscore$hsa001901)
 
 
 
@@ -63,11 +63,11 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa04668  <- list(geneSet$`TNF signaling pathway - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa04668,
                           ctrl = 10,
                           name = "hsa04668")
-SC_data@meta.data$hsa04668  <- as.numeric(Inscore$hsa046681)
+Sc_data@meta.data$hsa04668  <- as.numeric(Inscore$hsa046681)
 
 
 
@@ -82,11 +82,11 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa05208  <- list(geneSet$`Chemical carcinogenesis - reactive oxygen species - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa05208,
                           ctrl = 10,
                           name = "hsa05208")
-SC_data@meta.data$hsa05208  <- as.numeric(Inscore$hsa052081)
+Sc_data@meta.data$hsa05208  <- as.numeric(Inscore$hsa052081)
 
 
 
@@ -99,11 +99,11 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa05200  <- list(geneSet$`Pathways in cancer - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa05200,
                           ctrl = 10,
                           name = "hsa05200")
-SC_data@meta.data$hsa05200  <- as.numeric(Inscore$hsa052001)
+Sc_data@meta.data$hsa05200  <- as.numeric(Inscore$hsa052001)
 
 
 
@@ -116,11 +116,11 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa04510  <- list(geneSet$`Focal adhesion - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa04510,
                           ctrl = 10,
                           name = "hsa04510")
-SC_data@meta.data$hsa04510  <- as.numeric(Inscore$hsa045101)
+Sc_data@meta.data$hsa04510  <- as.numeric(Inscore$hsa045101)
 
 
 
@@ -134,11 +134,11 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa04932  <- list(geneSet$`Non-alcoholic fatty liver disease - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa04932,
                           ctrl = 10,
                           name = "hsa04932")
-SC_data@meta.data$hsa04932  <- as.numeric(Inscore$hsa049321)
+Sc_data@meta.data$hsa04932  <- as.numeric(Inscore$hsa049321)
 
 #hsa04151:PI3K-Akt signaling pathway
 gsInfo = keggGet('hsa04151')[[1]]
@@ -149,11 +149,11 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa04151  <- list(geneSet$`PI3K-Akt signaling pathway - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa04151,
                           ctrl = 10,
                           name = "hsa04151")
-SC_data@meta.data$hsa04151  <- as.numeric(Inscore$hsa041511)
+Sc_data@meta.data$hsa04151  <- as.numeric(Inscore$hsa041511)
 
 
 #hsa04610:Complement and coagulation cascades
@@ -165,11 +165,11 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa04610  <- list(geneSet$`Complement and coagulation cascades - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa04610,
                           ctrl = 10,
                           name = "hsa04610")
-SC_data@meta.data$hsa04610  <- as.numeric(Inscore$hsa046101)
+Sc_data@meta.data$hsa04610  <- as.numeric(Inscore$hsa046101)
 
 #ECM
 #hsa04512:ECM-receptor interaction
@@ -181,11 +181,11 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa04512  <- list(geneSet$`ECM-receptor interaction - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa04512,
                           ctrl = 10,
                           name = "hsa04512")
-SC_data@meta.data$hsa04512 <- as.numeric(Inscore$hsa045121)
+Sc_data@meta.data$hsa04512 <- as.numeric(Inscore$hsa045121)
 
 #HIF
 #hsa04066:HIF-1 signaling pathway
@@ -197,14 +197,14 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa04066  <- list(geneSet$`HIF-1 signaling pathway - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa04066,
                           ctrl = 10,
                           name = "hsa04066")
-SC_data@meta.data$hsa04066  <- as.numeric(Inscore$hsa040661)
+Sc_data@meta.data$hsa04066  <- as.numeric(Inscore$hsa040661)
 
 
-mydata1<- FetchData(SC_data,vars = c("Type","sample","hsa05200", "hsa04510", "hsa05208", "hsa04932", "hsa04151", "hsa05205", "hsa04610", "hsa00190", "hsa04512", "hsa04979", "hsa04066", "hsa04668"))
+mydata1<- FetchData(Sc_data,vars = c("Type","sample","hsa05200", "hsa04510", "hsa05208", "hsa04932", "hsa04151", "hsa05205", "hsa04610", "hsa00190", "hsa04512", "hsa04979", "hsa04066", "hsa04668"))
 
 ann_col <- data.frame(mydata1[,1:2])
 ann_col$id <-rownames(ann_col)

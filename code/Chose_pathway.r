@@ -8,8 +8,8 @@ names(geneSet) = gsInfo$NAME
 geneSet
 hsa04979  <- list(geneSet$`Cholesterol metabolism - Homo sapiens (human)`)
 
-Inscore <- AddModuleScore(SC_data,
+Inscore <- AddModuleScore(Sc_data,
                           features = hsa04979,
                           ctrl = 10,
                           name = "hsa04979")
-SC_data@meta.data$hsa04979  <- as.numeric(Inscore$hsa049791)
+Sc_data@meta.data$hsa04979  <- as.numeric(Inscore$hsa049791)
