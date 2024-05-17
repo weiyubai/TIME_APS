@@ -15,7 +15,7 @@ library(ggplot2)
 #a.	Put the three files ‘barcodes.tsv’, ‘genes.tsv’, and ‘matrix.mtx’ into the 'folder' folder
 #b.	Build Seurat object.
 
-folder <- Read10X(data.dir = './folder')
+folder <- Read10X(data.dir= "./folder")
 Sc_data <- CreateSeuratObject(counts = folder)
 #c.	Calculate the proportion of mitochondrial genes.
 # The variable in this step is defined as "Sc_data" in order to connect with the analysis steps of subsequent sample data.
@@ -44,8 +44,8 @@ Sc_data @meta.data$labels <- lihc.hesc$labels
 Sc_data <- RunPCA(Sc_data, features = VariableFeatures(object = Sc_data))
 Sc_data<- RunTSNE(Sc_data, dims = 1:10)
 DimPlot(Sc_data, group.by ="labels",reduction = "tsne",label = TRUE)
-ggsave("ScType.pdf",width = 4,height = 2.5)
-save(Sc_data,file="./Sc_data.Rdata")
+ggsave("./output/ScType.pdf",width = 4,height = 2.5)
+save(Sc_data,file="./output/Sc_data.Rdata")
 #Save single-cell sequencing expression matrix.
 ```
 # Option 2: Using sample data.

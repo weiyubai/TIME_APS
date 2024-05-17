@@ -15,7 +15,7 @@ library(ggplot2)
 #a.	Put the three files ‘barcodes.tsv’, ‘genes.tsv’, and ‘matrix.mtx’ into the 'folder' folder
 #b.	Build Seurat object.
 
-folder <- Read10X(data.dir = './folder')
+folder <- Read10X(data.dir ='./folder')
 Sc_data <- CreateSeuratObject(counts = folder)
 #c.	Calculate the proportion of mitochondrial genes.
 # The variable in this step is defined as "Sc_data" in order to connect with the analysis steps of subsequent sample data.
